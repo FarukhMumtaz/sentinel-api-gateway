@@ -2,9 +2,11 @@
 Production-Ready Node.js Backend & Containerized Infrastructure
 
 This project demonstrates a Security-First approach to backend engineering. Instead of a basic API, I built a decoupled system where the application and database are isolated using Docker, ensuring high scalability and a zero-drift deployment.
+
 🚀 Quick Deployment
 
 Deploy the entire stack in under 2 minutes using Infrastructure as Code (IaC).
+
 1. Environment Configuration
 
 Create a .env file in the root directory:
@@ -30,6 +32,7 @@ git clone https://github.com/FarukhMumtaz/sentinel-api-gateway.git
 cd sentinel-api-gateway
 
 docker compose up --build -d
+
 
 🏗️ System Architecture & Logic
 The Modular Core
