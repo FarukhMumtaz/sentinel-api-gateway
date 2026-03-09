@@ -11,16 +11,15 @@ I designed this to be quick. You can get the whole system running in less than 2
 1. Setup Environment
 
 Create a file named .env in the main folder and add these lines:
+DATABASE_USER=your_db_user
 
-DB_USER=farukh_admin
+DATABASE_PASSWORD=your_secure_password
 
-DB_PASSWORD=your_secure_password
+DATABASE_NAME=your_db_name
 
-DB_NAME=sentinel_db
+DATABASE_HOST=db
 
-DB_HOST=db
-
-DB_PORT=5432
+DATABASE_PORT=5432
 
 API_KEY=your_secret_access_key
 
@@ -28,9 +27,13 @@ API_KEY=your_secret_access_key
 
 Just run these commands in your terminal:
 
+
 git clone https://github.com/FarukhMumtaz/sentinel-api-gateway.git
+
 cd sentinel-api-gateway
+
 docker compose up --build -d
+
 
 🏗️ How it Works
 The Architecture
