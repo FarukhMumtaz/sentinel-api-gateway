@@ -11,10 +11,15 @@ Create a .env file in the root directory:
 Code snippet
 
 DATABASE_USER=your_db_user
+
 DATABASE_PASSWORD=your_secure_password
+
 DATABASE_NAME=your_db_name
+
 DATABASE_HOST=db
+
 DATABASE_PORT=5432
+
 API_KEY=your_secret_access_key
 
 2. Launch Commands
