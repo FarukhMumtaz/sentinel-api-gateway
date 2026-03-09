@@ -36,6 +36,7 @@ The Modular Core
 
 The system is built on a Decoupled Architecture. By isolating the Node.js runtime from the PostgreSQL layer, the infrastructure remains future-proof—allowing for independent scaling or database migrations without code refactoring
 I implemented a Custom Auth Middleware that acts as the primary gatekeeper. It validates every incoming request; if the traffic isn't authenticated, it is dropped before ever touching the application logic.
+
 💎 Key Engineering Features
 
     ⚡ Database Pooling: Integrated pg-pool to manage active connections, preventing system crashes during high-traffic spikes.
