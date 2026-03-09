@@ -1,21 +1,16 @@
-Sentinel API Gateway is more than just a backend; it is a Security-First Architecture proof-of-concept. Designed with a focus on modularity and extreme scalability, it ensures that the application logic and the database layer are completely decoupled yet interact with surgical precision.
-🏗️ Architectural Vision
+🛡️ Sentinel API Gateway
+Node.js Backend & PostgreSQL with Docker
 
-The system operates on a Modular Micro-Service pattern. By implementing Infrastructure as Code (IaC) principles, the deployment process is "One-Click," reproducible, and entirely free from configuration drift.
+This project is a solid example of a secure and scalable backend. Instead of just making a simple API, I focused on a Security-First approach. The app and the database are completely separate but work together perfectly using Docker containers.
 
-    Service Isolation: Node.js and PostgreSQL are isolated into independent containers.
+I used Infrastructure as Code (IaC) so that anyone can deploy this entire setup with just one or two commands without facing any configuration issues.
+🚀 How to Deploy
 
-    Security Layer: Implemented a custom High-Priority Auth Middleware that validates every incoming request before it touches sensitive internal routes.
+I designed this to be quick. You can get the whole system running in less than 2 minutes.
 
-    Data Integrity: Utilized pg-pool for efficient connection management, preventing resource exhaustion under heavy loads.
+1. Setup Environment
 
-🚀 Quick Start (Deployment)
-
-This entire environment can be spun up in under 120 seconds thanks to Docker orchestration.
-1. Environment Configuration
-
-Create a .env file in the root directory and define your credentials:
-Code snippet
+Create a file named .env in the main folder and add these lines:
 
 DB_USER=farukh_admin
 DB_PASSWORD=your_secure_password
@@ -24,42 +19,37 @@ DB_HOST=db
 DB_PORT=5432
 API_KEY=your_secret_access_key
 
-2. Launching the Stack
+2. Run the Project
 
-Execute the following in your terminal:
-Bash
+Just run these commands in your terminal:
 
-# Clone the repository
 git clone https://github.com/FarukhMumtaz/sentinel-api-gateway.git
-
-# Navigate to the project
 cd sentinel-api-gateway
+docker compose up --build -d
+🏗️ How it Works
+The Architecture
 
-# Spin up the containers
-docker-compose up --build -d
+Everything runs in a Modular way. By using Docker, the Node.js app and the PostgreSQL database stay isolated. This is great for the future—if we need to change the database or grow the app, we don't have to rewrite everything.
+Security (Sentinel Guard)
 
-🛠️ Tech Stack & Engineering Highlights
+I built a custom Auth Middleware to protect the API. It checks every single request coming in. If the traffic isn't authenticated, it can't touch the sensitive parts of the system.
+💎 Key Features
 
-    Backend: Node.js (Express Framework) utilizing ES6+ Standards.
+    Database Pooling: Used pg-pool so the system doesn't crash under heavy traffic.
 
-    Database: PostgreSQL (Alpine Edition) for a lightweight, high-performance footprint.
+    Data Safety: Used Docker volumes so your data stays safe even if the containers stop.
 
-    Infrastructure: Docker & Docker Compose for seamless orchestration.
+    Safe Credentials: All passwords and keys stay in the .env file, not in the code.
 
-    Persistence: Docker Volumes implemented to ensure data remains persistent and secure across container lifecycles.
+🛠️ Tech Stack
 
-🔒 Security Features
+    Backend: Node.js & Express
 
-    [x] Environment Variable Injection: No hardcoded secrets.
+    Database: PostgreSQL
 
-    [x] SQL Injection Prevention: Parameterized queries via pg.
+    DevOps: Docker & Docker Compose
 
-    [x] Rate Limiting Ready: Architecture allows for easy scaling of gateway filters.
+👨‍💻 Developed By
 
-    [x] Container Security: Minimalist Alpine images to reduce the attack surface.
-
-👨‍💻 About the Developer
-
-Farukh Mumtaz Cloud Architect & Security Engineer Aspirant
-
-I developed this project as a key milestone in my journey toward becoming a Cloud Engineer. My focus is always on designing systems that are not only high-performance but also "Iron-Clad" in terms of security and resilience.
+Farukh Mumtaz
+Cloud Architect & Security Engineer Aspirant
