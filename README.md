@@ -1,67 +1,63 @@
-# 🛡️ Sentinel API Gateway
+🛡️ Sentinel API Gateway
+Production-Ready Node.js Backend & Containerized Infrastructure
 
-### **Production-Ready Node.js Backend & Containerized PostgreSQL Infrastructure**
+Sentinel API Gateway is more than just a simple backend; it is a proof-of-concept for a Security-First Architecture. The primary objective of this project is to demonstrate the seamless integration of modularity and scalability, where the backend logic and the database layer are completely decoupled yet interact with high precision.
 
+By implementing Infrastructure as Code (IaC) principles, I have ensured that the deployment process is "One-Click," reproducible, and free from configuration drift.
+🚀 Quick Deployment Guide
 
+This system is designed for high availability and rapid setup. Any developer can spin up the entire environment in under 2 minutes.
+1. Environment Configuration
 
----
+First, create a .env file in the root directory and define the following credentials:
 
-## 🚀 Quick Start & Deployment
+DB_USER=farukh_admin
 
-### 1. Requirements
-- Docker & Docker Compose installed.
+DB_PASSWORD=your_secure_password
 
-### 2. Configuration
-Create a `.env` file in the root directory:
-```env
-DB_USER=your_db_user
-DB_PASSWORD=your_password
-DB_NAME=your_db_name
+DB_NAME=sentinel_db
+
 DB_HOST=db
+
 DB_PORT=5432
-API_KEY=your_secret_key
 
-### 3. Launch Stack
+API_KEY=your_secret_access_key
+2. Launching the Stack
 
-Clone and spin up the infrastructure with a single command:
-Bash
+Execute the following commands in your terminal:
 
-git clone [https://github.com/FarukhMumtaz/sentinel-api-gateway.git](https://github.com/FarukhMumtaz/sentinel-api-gateway.git)
+git clone https://github.com/FarukhMumtaz/sentinel-api-gateway.git
+
 cd sentinel-api-gateway
+
 docker compose up --build -d
+🏗️ Technical Deep Dive
+Architectural Logic
 
-🏗️ Design Logic & Architecture
+The system operates on a Modular Micro-Service pattern. Using Docker Compose, I have isolated PostgreSQL and Node.js into their own containers. The significant advantage of this approach is future-proofing: if we need to migrate the database or scale the application service, the entire ecosystem remains undisturbed.
+Sentinel Guard (The Security Layer)
 
-The system is built on a Modular Micro-Service pattern, decoupling the application logic from the database layer. By utilizing Docker Compose, the environment is fully reproducible, eliminating configuration drift.
-📐 Technical Request Flow
+For security, I implemented a custom High-Priority Auth Middleware. Every incoming request is strictly validated, ensuring that only authenticated traffic reaches sensitive internal routes.
+💎 Engineering Highlights
 
-    Ingress Gateway: Traffic enters via Port 3000.
+    Database Pooling: Utilized pg-pool to manage active connections efficiently, preventing resource exhaustion under heavy loads.
 
-    Authentication Layer: src/middlewares/auth.js validates the x-api-key.
+    Data Persistence: Implemented Docker volumes to ensure that the database remains persistent and secure, even if the containers are destroyed or restarted.
 
-    Entity Routing: Request is mapped to the corresponding service logic.
+    Secrets Management: All sensitive information is injected via environment variables, adhering to industry-standard security practices for production environments.
 
-    Database Persistence: Optimized queries are executed against the PostgreSQL instance.
+🛠️ Tech Stack & Standards
 
-💎 Core Engineering Highlights
-Feature	Implementation	Business Value
-Sentinel Guard	Custom High-Priority Auth Middleware	Ensures zero unauthorized access to sensitive endpoints.
-Database Pooling	Persistent pg-pool Management	Optimizes resource usage and prevents connection exhaustion.
-Infrastructure as Code	Multi-container Docker Setup	Seamless deployment across any cloud provider.
-Secrets Isolation	Environment Variable Injection	Industry-standard security against credential exposure.
-Data Persistence	Docker Volume Mapping	Guaranteed data safety across container lifecycles.
-🛠️ Tech Stack & Dev Standards
+    Backend: Node.js (Express Framework)
 
-    Runtime: Node.js (Express Framework)
+    Database: PostgreSQL 15 (Alpine Edition)
 
-    Database: PostgreSQL 15-Alpine
+    Infrastructure: Docker & Docker Compose
 
-    DevOps: Docker & Docker-Compose
+    Development Standards: Clean Code principles, Modular Routing, and Security Filtering.
 
-    Security: Environment Isolation, Middleware Filtering, Volume Encryption
-
-👨‍💻 Developed By
+👨‍💻 About the Developer
 
 Farukh Mumtaz Cloud Architect & Security Engineer Aspirant
 
-Focus: Secure Cloud Infrastructures & Backend Scalability.
+I developed this project as a key milestone in my journey toward becoming a Cloud Engineer. My focus is always on designing systems that are not only high-performance but also "Iron-Clad" in terms of security and resilience
