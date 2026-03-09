@@ -21,7 +21,9 @@ API_KEY=your_secret_access_key
 Bash
 
 git clone https://github.com/FarukhMumtaz/sentinel-api-gateway.git
+
 cd sentinel-api-gateway
+
 docker compose up --build -d
 
 🏗️ System Architecture & Logic
