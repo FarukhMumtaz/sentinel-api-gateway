@@ -36,7 +36,7 @@ docker compose up --build -d
 The Architecture
 
 Everything runs in a Modular way. By using Docker, the Node.js app and the PostgreSQL database stay isolated. This is great for the future—if we need to change the database or grow the app, we don't have to rewrite everything.
-Security (Sentinel Guard)
+Security.
 
 I built a custom Auth Middleware to protect the API. It checks every single request coming in. If the traffic isn't authenticated, it can't touch the sensitive parts of the system.
 
