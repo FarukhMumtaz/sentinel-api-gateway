@@ -1,9 +1,3 @@
-To give it that "full chaass" (high-end professional) energy, we need to use visual hierarchy, GitHub Badges, clean code blocks, and a system architecture section. This version is designed to impress recruiters and look like a top-tier open-source project.
-
-Here is the upgraded README.md in English:
-🛡️ Sentinel API Gateway
-Production-Ready Node.js Backend & Containerized Infrastructure
-
 Sentinel API Gateway is more than just a backend; it is a Security-First Architecture proof-of-concept. Designed with a focus on modularity and extreme scalability, it ensures that the application logic and the database layer are completely decoupled yet interact with surgical precision.
 🏗️ Architectural Vision
 
