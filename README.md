@@ -1,63 +1,51 @@
 🛡️ Sentinel API Gateway
-Node.js Backend & PostgreSQL with Docker
+Production-Ready Node.js Backend & Containerized Infrastructure
 
-This project is a solid example of a secure and scalable backend. Instead of just making a simple API, I focused on a Security-First approach. The app and the database are completely separate but work together perfectly using Docker containers.
+This project demonstrates a Security-First approach to backend engineering. Instead of a basic API, I built a decoupled system where the application and database are isolated using Docker, ensuring high scalability and a zero-drift deployment.
+🚀 Quick Deployment
 
-I used Infrastructure as Code (IaC) so that anyone can deploy this entire setup with just one or two commands without facing any configuration issues.
-🚀 How to Deploy
+Deploy the entire stack in under 2 minutes using Infrastructure as Code (IaC).
+1. Environment Configuration
 
-I designed this to be quick. You can get the whole system running in less than 2 minutes.
+Create a .env file in the root directory:
+Code snippet
 
-1. Setup Environment
-
-Create a file named .env in the main folder and add these lines:
 DATABASE_USER=your_db_user
-
 DATABASE_PASSWORD=your_secure_password
-
 DATABASE_NAME=your_db_name
-
 DATABASE_HOST=db
-
 DATABASE_PORT=5432
-
 API_KEY=your_secret_access_key
 
-2. Run the Project
-
-Just run these commands in your terminal:
-
+2. Launch Commands
+Bash
 
 git clone https://github.com/FarukhMumtaz/sentinel-api-gateway.git
-
 cd sentinel-api-gateway
-
 docker compose up --build -d
 
+🏗️ System Architecture & Logic
+The Modular Core
 
-🏗️ How it Works
-The Architecture
+The system is built on a Decoupled Architecture. By isolating the Node.js runtime from the PostgreSQL layer, the infrastructure remains future-proof—allowing for independent scaling or database migrations without code refactoring.
+Sentinel Guard (Security Layer)
 
-Everything runs in a Modular way. By using Docker, the Node.js app and the PostgreSQL database stay isolated. This is great for the future—if we need to change the database or grow the app, we don't have to rewrite everything.
-Security.
+I implemented a Custom Auth Middleware that acts as the primary gatekeeper. It validates every incoming request; if the traffic isn't authenticated, it is dropped before ever touching the application logic.
+💎 Key Engineering Features
 
-I built a custom Auth Middleware to protect the API. It checks every single request coming in. If the traffic isn't authenticated, it can't touch the sensitive parts of the system.
+    ⚡ Database Pooling: Integrated pg-pool to manage active connections, preventing system crashes during high-traffic spikes.
 
-💎 Key Features
+    💾 Data Persistence: Used Docker Volumes to ensure data remains persistent even if containers are destroyed or updated.
 
-    Database Pooling: Used pg-pool so the system doesn't crash under heavy traffic.
-
-    Data Safety: Used Docker volumes so your data stays safe even if the containers stop.
-
-    Safe Credentials: All passwords and keys stay in the .env file, not in the code.
+    🔒 Secrets Management: Zero hardcoded credentials. All sensitive keys are injected via environment variables for production security.
 
 🛠️ Tech Stack
 
-    Backend: Node.js & Express
+    Backend: Node.js (Express Framework)
 
-    Database: PostgreSQL
+    Database: PostgreSQL (Containerized)
 
-    DevOps: Docker & Docker Compose
+    DevOps: Docker & Docker Compose (IaC)
 
 👨‍💻 Developed By
 
